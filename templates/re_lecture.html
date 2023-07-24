@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registered Lecture</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+        <th>subject</th>
+        <th>lecture name</th>
+        <th>tutor</th>
+        <th>price</th>
+    </thead>
+
+    <tbody>
+        {% for subject in subjects}
+        <tr>
+            <td>{{ subject[0] }}</td>
+            <td>{{ subject[1] }}</td>
+            <td>{{ subject[2] }}</td>
+            <td>{{ subject[3] }}</td>
+        </tr>
+    </tbody>
+
+    <button onclick="history.back()">return</button>
+
+</table>
+</body>
+</html>

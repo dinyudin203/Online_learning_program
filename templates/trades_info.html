@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>trades_info</title>
+</head>
+<body>
+Enrollment Info<br><br>
+
+<table border="1">
+    <thead>
+        <th>tutor</th>
+        <th>tutee</th>
+        <th>name</th>
+        <th>code</th>
+        <th>lecutre price</th>
+    </thead>
+
+    <tbody>
+        {% for subject in subjects %}
+        <tr>
+            <td>{{subject[0]}}</td>
+            <td>{{subject[1]}}</td>
+            <td>{{subject[2]}}</td>
+            <td>{{subject[3]}}</td>
+            <td>{{subject[4]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

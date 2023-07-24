@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tutee</title>
+</head>
+<body>
+View lecture<br>
+<form action="/tutor_info" method="post">
+    <input type="submit" name="send" value="my info">
+    <input type="hidden" name="id" value="{{ account[0][0] }}">
+</form>
+<br>
+==================================================
+<br>
+<table border="1">
+    <thead>
+        <th>popular subject</th>
+        <th>popular lecture</th>
+        <th>popular tutor</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{result[0][1]}}</td>
+            <td>{{result[0][2]}}</td>
+            <td>{{result[0][0]}}</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+User Info<br><br>
+current user: {{ account[0][0] }}/
+
+<form action="/" methods="post">
+    <input type="submit" name="send" value="logout">
+</form> <br>
+credit: {{ account[0][1] }}
+rating: {{ account[0][2] }}
+<br><br>
+Lectures<br><br>
+
+<form action="/add" method="post">
+    <input type="submit" name="send" value="add">
+    <input type="hidden" name="tr_id" value="{{account[0][0]}}">
+</form>
+
+<table border="1">
+    <thead>
+        <th>code</th>
+        <th>name</th>
+        <th>price</th>
+        <th>tutor</th>
+        <th>       </th>
+    </thead>
+
+    <tbody>
+        {% for subject in subjects %}
+        <form action="/buy" method="post">
+            <tr>
+                <td>{{ subject[0] }}</td>
+                <input type="hidden" name="code" value="{{ subject[0] }}">
+                <input type="hidden" value="{{ account[0][0] }}" name="te_id">
+                <td>{{ subject[1] }}
+                <input type="hidden" name="name" value="{{ subject[1] }}">
+                <td>{{ subject[2] }}</td>
+                <input type="hidden" name="price" value="{{ subject[2] }}">
+                <td>{{ subject[3] }}</td>
+                <input type="hidden" name="tr_id" value="{{ subject[3] }}">
+                <td><input value="register" type="submit" name="send"></td>
+                <input type="hidden" name="te_id"  value="{{ account[0][0] }}">
+            </tr>
+        </form>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

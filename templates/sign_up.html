@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign_up</title>
+</head>
+<body>
+Sign up page<br><br>
+
+<form action="/sign_up " method="post">
+    <label for="user_id">ID:</label><br>
+    <input id="user_id" type="text" name="id" value=""><br>
+
+    <label for="user_pwd">PASSWORD:</label><br>
+    <input id="user_pwd" type="text" name="password" value=""><br>
+    Choose a role:
+    <select name="roles" id="role" size="1">
+        <option value="tutor">tutor</option>
+        <option value="tutee">tutee</option>
+    </select>
+    <input type="submit" name="send" value="sign up">
+</form>
+</body>
+</html>

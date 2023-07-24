@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>confirm</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+       <th>tutor</th>
+       <th>tutee</th>
+       <th>subject</th>
+       <th>lecture name</th>
+       <th>price</th>
+    </thead>
+
+    <tbody>
+        {% for subject in subjects %}
+        <tr>
+            <td>{{ subject[0] }}</td>
+            <td>{{ subject[1] }}</td>
+            <td>{{ subject[2] }}</td>
+            <td>{{ subject[3] }}</td>
+            <td>{{ subject[4] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<button onclick="history.back()">return</button>
+</body>
+</html>

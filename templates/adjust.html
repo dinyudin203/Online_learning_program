@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>adjust</title>
+</head>
+<body>
+Existing Subject List<br>
+<table border="1">
+    <tbody>
+        {% for subject in subjects %}
+        <form action="/delete_confirm" method="post">
+            <tr>
+                <td>{{ subject[0] }}</td>
+                <input type="hidden" name="code" value="{{subject[0]}}">
+                <td>{{ subject[1] }}</td>
+                <td><input type="submit" name="send" value="delete"></td>
+            </tr>
+        </form>
+        {% endfor %}
+    </tbody>
+</table>
+<form action="/adjust_confirm" method="post">
+    <label for="leture_code">Code:</label>
+    <input id="leture_code" type="text" name="code"><br>
+
+    <label for="leture_name">Name:</label>
+    <input id="leture_name" type="text" name="name"><br>
+
+    <input type="submit" name="submit" value="add">
+</form>
+<br>
+<button onclick="history.back()">cancel</button>
+</body>
+</html>

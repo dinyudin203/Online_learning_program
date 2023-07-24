@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buy</title>
+</head>
+<body>
+Lecture INFO
+<table border="1">
+    <thead>
+        <th>code</th>
+        <th>name</th>
+        <th>price</th>
+        <th>tutor</th>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>{{code}}</td>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td>{{tr_id}}</td>
+        </tr>
+    </tbody>
+</table>
+<br><br>
+Your credit: {{result[0][0]}}<br>
+Your rating: {{result[0][1]}}
+<br>
+Total price: {{origin[0]}}<br>
+Discount price: {{origin[1]}}<br>
+====================================<br>
+Final price: {{origin[2]}}
+<br>
+<form action="/confirm" method="post">
+    <input type="submit" name="confirm" value="confirm">
+    <input type="hidden" name="te_id" value={{te_id}}>
+    <input type="hidden" name="tr_id" value={{tr_id}}>
+    <input type="hidden" name="rprice" value={{origin[0]}}>
+    <input type="hidden" name="code" value={{code}}>
+    <input type="hidden" name="name" value={{name}}>
+    <input type="hidden" name="discount" value={{origin[2]}}>
+
+</form>
+<button onclick="history.back()">cancel</button>
+</body>
+</html>
